@@ -19,7 +19,6 @@ from gilded_rose import GildedRose, Item
 
 
 def test_quality_degrades_twice_as_fast_after_sell_by_date():
-
     # Given
     normal_item = Item("Normal Item", sell_in=1, quality=10)
     gilded_rose = GildedRose(items=[normal_item])
@@ -67,7 +66,9 @@ def test_item_quality_never_exceeds_50():
     # Given
     items = [
         Item("Aged Brie", sell_in=2, quality=48),
-        Item("Backstage passes to a TAFKAL80ETC concert", sell_in=5, quality=49),
+        Item(
+            "Backstage passes to a TAFKAL80ETC concert", sell_in=5, quality=49
+        ),
     ]
     gilded_rose = GildedRose(items=items)
 
@@ -116,9 +117,13 @@ def test_gilded_rose_with_various_items():
     # Given
     items = [
         Item(name="Aged Brie", sell_in=2, quality=0),
-        Item(name="Backstage passes to a TAFKAL80ETC concert", sell_in=5, quality=49),
+        Item(
+            name="Backstage passes to a TAFKAL80ETC concert",
+            sell_in=5,
+            quality=49,
+        ),
         Item(name="Normal Item", sell_in=10, quality=20),
-        Item(name="Sulfuras, Hand of Ragnaros", sell_in=0, quality=80)
+        Item(name="Sulfuras, Hand of Ragnaros", sell_in=0, quality=80),
     ]
     gilded_rose = GildedRose(items)
 
@@ -127,18 +132,25 @@ def test_gilded_rose_with_various_items():
 
     # Then
     assert items[0].quality == 1  # Aged Brie increases in quality
-    assert items[1].quality == 50  # Backstage passes increase by 3 but cap at 50
+    assert (
+        items[1].quality == 50
+    )  # Backstage passes increase by 3 but cap at 50
     assert items[2].quality == 19  # Normal item degrades by 1
-    assert items[3].quality == 80 # Sulfuras quality does not change
+    assert items[3].quality == 80  # Sulfuras quality does not change
 
 
 def test_backstage_passes_before_after_concert():
-
     # Given
     items = [
-        Item("Backstage passes to a TAFKAL80ETC concert", sell_in=15, quality=20),
-        Item("Backstage passes to a TAFKAL80ETC concert", sell_in=9, quality=45),
-        Item("Backstage passes to a TAFKAL80ETC concert", sell_in=1, quality=47)
+        Item(
+            "Backstage passes to a TAFKAL80ETC concert", sell_in=15, quality=20
+        ),
+        Item(
+            "Backstage passes to a TAFKAL80ETC concert", sell_in=9, quality=45
+        ),
+        Item(
+            "Backstage passes to a TAFKAL80ETC concert", sell_in=1, quality=47
+        ),
     ]
 
     gilded_rose = GildedRose(items)
