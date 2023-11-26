@@ -39,3 +39,13 @@ def test_quality_degrades_twice_as_fast_after_sell_by_date():
     assert normal_item.quality == 7  # Quality should decrease by 2
 
 
+def test_quality_never_negative():
+    # Given
+    items = [Item("Normal Item", 0, 0)]
+    gilded_rose = GildedRose(items)
+
+    # When
+    gilded_rose.update_quality()
+
+    # Then
+    assert items[0].quality == 0
