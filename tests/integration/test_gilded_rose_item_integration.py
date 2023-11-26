@@ -63,4 +63,20 @@ def test_quality_of_aged_brie_increase_after_sell_date():
     assert items[0].quality == 12
 
 
+def test_item_quality_never_exceeds_50():
+    # Given
+    items = [
+        Item("Aged Brie", sell_in=2, quality=48),
+        Item("Backstage passes to a TAFKAL80ETC concert", sell_in=5, quality=49),
+    ]
+    gilded_rose = GildedRose(items=items)
+
+    for _ in range(10):
+        # When
+        gilded_rose.update_quality()
+
+        # Then
+        # Check that quality of each item never exceeds 50
+        for item in items:
+            assert item.quality <= 50
 
