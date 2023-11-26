@@ -49,3 +49,18 @@ def test_quality_never_negative():
 
     # Then
     assert items[0].quality == 0
+
+
+def test_quality_of_aged_brie_increase_after_sell_date():
+    # Given
+    items = [Item("Aged Brie", 0, 10)]
+    gilded_rose = GildedRose(items)
+
+    # When
+    gilded_rose.update_quality()
+
+    # Then
+    assert items[0].quality == 12
+
+
+
