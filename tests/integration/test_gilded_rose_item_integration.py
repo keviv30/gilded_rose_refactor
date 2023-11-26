@@ -1,4 +1,7 @@
 """
+The following tests were written before refactoring the code to make sure
+the code works as intended.
+
 Requirements:
 - All items have a SellIn value which denotes the number of days we have to sell the item
 - All items have a Quality value which denotes how valuable the item is
