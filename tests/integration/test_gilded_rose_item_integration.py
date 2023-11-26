@@ -80,3 +80,15 @@ def test_item_quality_never_exceeds_50():
         for item in items:
             assert item.quality <= 50
 
+
+def test_sulfuras_never_changes():
+    # Given
+    items = [Item("Sulfuras, Hand of Ragnaros", 0, 80)]
+    gilded_rose = GildedRose(items)
+
+    # When
+    gilded_rose.update_quality()
+
+    # Then
+    assert items[0].sell_in == 0
+    assert items[0].quality == 80
