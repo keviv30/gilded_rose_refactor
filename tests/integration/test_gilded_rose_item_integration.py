@@ -92,3 +92,21 @@ def test_sulfuras_never_changes():
     # Then
     assert items[0].sell_in == 0
     assert items[0].quality == 80
+
+
+def test_normal_item_degradation():
+    # Given
+    items = [Item("Normal Item", 5, 10)]
+    gilded_rose = GildedRose(items)
+
+    # When
+    gilded_rose.update_quality()
+
+    # Then
+    assert items[0].quality == 9
+
+    # When
+    # After sell-by date
+    items[0].sell_in = -1
+    gilded_rose.update_quality()
+    assert items[0].quality == 7
