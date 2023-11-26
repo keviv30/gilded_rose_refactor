@@ -130,3 +130,27 @@ def test_gilded_rose_with_various_items():
     assert items[1].quality == 50  # Backstage passes increase by 3 but cap at 50
     assert items[2].quality == 19  # Normal item degrades by 1
     assert items[3].quality == 80 # Sulfuras quality does not change
+
+
+def test_backstage_passes_before_after_concert():
+
+    # Given
+    items = [
+        Item("Backstage passes to a TAFKAL80ETC concert", sell_in=15, quality=20),
+        Item("Backstage passes to a TAFKAL80ETC concert", sell_in=9, quality=45),
+        Item("Backstage passes to a TAFKAL80ETC concert", sell_in=1, quality=47)
+    ]
+
+    gilded_rose = GildedRose(items)
+
+    # When
+    gilded_rose.update_quality()
+
+    # Then
+    assert items[0].quality == 21  # Increases by 1 when more than 10 days left
+    assert items[1].quality == 47  # Increases by 2 when 10 days or less
+    assert items[2].quality == 50  # Increases by 3 but caps at 50
+
+    # Update again to simulate day passing
+    gilded_rose.update_quality()
+    assert items[2].quality == 0
