@@ -70,6 +70,8 @@ Backstage passes to a TAFKAL80ETC concert, 10, 20
 Conjured Apple, 3, 6
 ```
 
+You can add more Items to the inventory if needed
+
 Update items:
 
 ```commandline
@@ -94,4 +96,5 @@ as a normal item before refactor
 Scopes of improvement:
 
 - Adding logging to Gilded Rose project is a great idea, especially for tracking the status of items over time.
+- Possibly add alert if a price of an item drops below certain threshold as a feature
 - Adding more tests to cover varius scenarios
