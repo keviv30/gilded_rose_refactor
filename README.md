@@ -17,7 +17,7 @@ Features
 - Special Item Rules: Implements unique rules for special items like "Aged Brie," "Backstage passes," and "Sulfuras."
 - Conjured Item Support: Includes functionality for "Conjured" items, which decreases in quality faster than normal items.
 
-Prerequisites
+Requirements
 
 - Python 3.6 or higher
 - pip (Python package manager)
