@@ -1,4 +1,3 @@
-
 from updaters import constants
 from updaters.abstract_item_updater import AbstractItemUpdater
 

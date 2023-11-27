@@ -1,5 +1,5 @@
-from updaters.aged_brie_updater import AgedBrieUpdater
 from gilded_rose import Item
+from updaters.aged_brie_updater import AgedBrieUpdater
 
 
 def test_aged_brie_quality_increases():

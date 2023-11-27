@@ -12,4 +12,6 @@ class NormalItemUpdater(AbstractItemUpdater):
         self.item.sell_in -= 1
 
     def _decrease_quality(self, amount: int):
-        self.item.quality = max(constants.MIN_QUALITY, self.item.quality - amount)
+        self.item.quality = max(
+            constants.MIN_QUALITY, self.item.quality - amount
+        )
