@@ -15,7 +15,8 @@ Features
 
 - Inventory Management: Automatically updates the quality and sell-in values of items in the inventory.
 - Special Item Rules: Implements unique rules for special items like "Aged Brie," "Backstage passes," and "Sulfuras."
-- Conjured Item Support: Includes functionality for "Conjured" items, which decreases in quality faster than normal items.
+- Conjured Item feature implementation: Includes functionality for "Conjured" items, 
+which decreases in quality faster than normal items.
 
 Requirements
 
