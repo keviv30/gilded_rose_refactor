@@ -60,6 +60,16 @@ Display current inventory:
 python main.py --display
 ```
 
+Example output:
+
+```
+Inventory current status:
+
+Aged Brie, 2, 0
+Backstage passes to a TAFKAL80ETC concert, 10, 20
+Conjured Apple, 3, 6
+```
+
 Update items:
 
 ```commandline
@@ -80,3 +90,8 @@ pytest -sv
 
 Note: the texttest might fail for conjured item as it was initially treating them
 as a normal item before refactor
+
+Scopes of improvement:
+
+- Adding logging to Gilded Rose project is a great idea, especially for tracking the status of items over time.
+- Adding more tests to cover varius scenarios

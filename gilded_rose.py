@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import annotations
 
-from typing import Dict,  List, Type
+from typing import Dict, List, Type
 
 from updaters.abstract_item_updater import AbstractItemUpdater
 from updaters.aged_brie_updater import AgedBrieUpdater
