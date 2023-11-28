@@ -169,3 +169,23 @@ def test_backstage_passes_before_after_concert():
     # Update again to simulate day passing
     gilded_rose.update_quality()
     assert items[2].quality == 0
+
+
+def test_update_quality_with_valid_items():
+    items = [Item("Aged Brie", 2, 0), Item("Normal Item", 5, 7)]
+    gilded_rose = GildedRose(items)
+    gilded_rose.update_quality()
+
+    assert items[0].quality == 1
+    assert items[1].quality == 6
+
+
+def test_update_quality_continues_after_exception():
+    items = [
+        Item("Normal Item", 5, 55),
+        Item("Aged Brie", 2, 0),
+    ]  # First item will cause exception
+    gilded_rose = GildedRose(items)
+    gilded_rose.update_quality()
+
+    assert items[1].quality == 1
