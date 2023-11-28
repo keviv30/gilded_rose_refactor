@@ -1,0 +1,2 @@
+class QualityBoundException(ValueError):
+    pass
