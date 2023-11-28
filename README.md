@@ -99,4 +99,4 @@ Scopes of improvement:
 - Adding logging to Gilded Rose project is a great idea, especially for tracking the status of items over time.
 - Possibly add alert if a price of an item drops below certain threshold as a feature
 - Adding more tests to cover varius scenarios
-- 
+- Could use a factory-like method to get the correct updater for each item
